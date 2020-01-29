@@ -1,10 +1,9 @@
 
 const express = require('express');
-const comics = require('./comics');
+const comicsByGender = require('./comicsByGender');
 
 const bodyParser = require('body-parser');;
 const connection = require('../conf');
-
 
 const router = express.Router({ mergeParams: true });
 
@@ -15,15 +14,14 @@ router.use(
   })
 );
 
-router.use('/comics', comics);
+router.use('/:genderId/comics', comicsByGender);
 
 // Post a gender
-router.post('/genders', (req, res) => {
+router.post('/', (req, res) => {
   const formData = req.body;
   connection.query('INSERT INTO gender SET ?', formData, (err, results) => {
     if (err) {
-      console.log(err);
-      res.status(500).send("Error saving a gender");
+      res.status(500).send('Error when getting the genders');
     } else {
       res.sendStatus(200);
     }    
@@ -31,20 +29,18 @@ router.post('/genders', (req, res) => {
 });
 
 // Get all genders
-router.get('/genders', (req, res) => {
+router.get('/', (req, res) => {
   connection.query('SELECT * FROM gender', (err, results) => {
     if (err) {
-      console.log(err);
-      res.status(500).send("Error saving a gender");
-    } else {
-      res.json(results);
-    }    
+      res.status(500).send('Error getting the genders');
+    } 
+    res.json(results);
   })
 });
 
 // Get a gender by id
-router.get('/genders/:id', (req, res) => {
-  const showOne= req.params.id;
+router.get('/:genderId', (req, res) => {
+  const showOne= req.params.genderId;
   connection.query('SELECT * FROM gender WHERE id = ?', [showOne], (err, results) => {
     if (err) {
       res.status(500).send(`Error when getting the gender ${err.message}`);
@@ -56,5 +52,20 @@ router.get('/genders/:id', (req, res) => {
     }
   });
 });
+
+// Put a gender by id
+router.put('/:genderId', (req, res) => {
+  const idGender= req.params.genderId;
+  const formData = req.body;
+  connection.query('UPDATE gender SET ? WHERE id = ?', [formData, idGender], err => {
+    if (err) {
+      console.log(err);
+      res.status(500).send("Error trying to update this gender");
+    } else {
+      res.sendStatus(200);
+    }    
+  })
+})
+
 
 module.exports = router;

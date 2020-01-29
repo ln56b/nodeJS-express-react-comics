@@ -1,11 +1,12 @@
   
 const express = require('express');
 const genders = require('./genders');
-
+const comics = require('./comics');
 
 const router = express.Router();
 
-router.use('/', genders);
+router.use('/genders', genders);
+router.use('/comics', comics)
 
 
 /* GET index page. */
