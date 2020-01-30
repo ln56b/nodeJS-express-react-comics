@@ -34,9 +34,9 @@ router.get('/', (req, res) => {
 });
 
 // Get a comic by id
-router.get('/:comicId', (req, res) => {
-  const showOne= req.params.comicId;
-  connection.query('SELECT * FROM comic WHERE id = ?', [showOne], (err, results) => {
+router.get('/:id', (req, res) => {
+  const showOne= req.params.id;
+  connection.query('SELECT c.*, g.gender_name FROM comic AS c JOIN gender AS g ON g.id = c.gender_id WHERE c.id = ?', [showOne], (err, results) => {
     if (err) {
       res.status(500).send(`Error when getting the comic ${err.message}`);
     } 
@@ -49,7 +49,7 @@ router.get('/:comicId', (req, res) => {
 });
 
 // Put a comic by id
-router.put('/:comicId', (req, res) => {
+router.put('/:id', (req, res) => {
   const idComic= req.params.comicId;
   const formData = req.body;
   connection.query('UPDATE comic SET ? WHERE id = ?', [formData, idComic], err => {
@@ -62,8 +62,8 @@ router.put('/:comicId', (req, res) => {
   })
 })
 // Delete a comic by id
-router.delete('/:comicId', (req, res) => {
-  const idComic = req.params.comicId;
+router.delete('/:id', (req, res) => {
+  const idComic = req.params.id;
   connection.query('DELETE FROM comic WHERE id = ?', [idComic], err => {
     if (err) {
       console.log(err);
