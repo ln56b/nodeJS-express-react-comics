@@ -1,13 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Switch, Route } from 'react-router-dom';
 import FetchComics from './components/ComicsGallery/FetchComics';
+import FetchComic from './components/ComicsContent/FetchComic';
 
 function App() {
   return (
-    <div className="App">
-      <FetchComics />
-    </div>
+    <Switch>
+      <Route exact path="/" component={FetchComics} />
+      <Route path="/comics/:comicId" component={FetchComic} />
+    </Switch>
   );
 }
 

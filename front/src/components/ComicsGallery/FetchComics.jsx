@@ -26,6 +26,10 @@ class FetchComics extends Component {
     });
   };
 
+  goToComicContent() {
+    
+  }
+
   render() {
     return (
       <div>
