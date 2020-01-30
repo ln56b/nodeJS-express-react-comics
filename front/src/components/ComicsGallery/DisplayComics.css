@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.generic-h2-title {
+  font-size: 3rem;
+  margin: 1rem;
+}
+
+.comics-gallery-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.comic-container {
+  border: 1px solid #ccc;
+  height: auto;
+  margin: 1rem;
+  padding: 1rem;
+  width: 70vw;
+}
+
+.comic-cover {
+  object-fit: cover;
+  height: auto;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .comics-gallery-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .comic-container {
+    height: 40vh;
+    width: 20vw;
+
+  }
+
+  .comic-container:hover {
+    border: 1px solid rgba(61, 58, 58, 0.467);
+    transform: scale(1.05);
+  }
+}

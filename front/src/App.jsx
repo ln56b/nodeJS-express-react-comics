@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import FetchComics from './components/FetchComics';
+import FetchComics from './components/ComicsGallery/FetchComics';
 
 function App() {
   return (
