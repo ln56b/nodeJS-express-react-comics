@@ -16,9 +16,9 @@ router.use(
 router.get('/', (req, res) => {
   let sql = 'SELECT * FROM comic';
   const sqlValues = [];
-  // Filter comics if author starts with
+  // Filter comics if author contains
   if (req.query.author) {
-    sql += ` WHERE author LIKE '${req.query.author}%'`;
+    sql += ` WHERE author LIKE '%${req.query.author}%'`;
     sqlValues.push(req.query.author);
   }
   connection.query(sql, sqlValues, (err, results) => {
@@ -26,7 +26,7 @@ router.get('/', (req, res) => {
       console.log(err);
       res.status(500).send('Error getting the comics');
     } else if (results.length === 0) {
-      res.status(404).send('Site list not found');
+      res.status(404).send('Author not found');
     } else {
       res.json(results);
     }
