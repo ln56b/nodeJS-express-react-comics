@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import DisplayComic from './DisplayComic';
+import Comic from './Comic';
 
 class FetchComic extends Component {
   constructor(props) {

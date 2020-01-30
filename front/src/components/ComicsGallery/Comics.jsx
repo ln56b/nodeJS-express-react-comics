@@ -1,14 +1,14 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import './DisplayComics.css'
+import './Comics.css'
 
-const DisplayComics = ({comics}) => {
+const Comics = ({comics}) => {
   return (
     <Fragment>
       <h2 className="generic-h2-title">BD du moment</h2>
       <div className="comics-gallery-container">
         {comics.map(comic => 
-        <Link to="/comics/2">
+        <Link to={`/comics/${comic.id}`}>
           <div className="comic-container">
             <img className="comic-cover" src={comic.cover_image}  alt={comic.title}/>
           </div>
@@ -19,4 +19,4 @@ const DisplayComics = ({comics}) => {
   );
 }
 
-export default DisplayComics;
+export default Comics;

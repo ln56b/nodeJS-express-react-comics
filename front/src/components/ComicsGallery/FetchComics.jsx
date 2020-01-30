@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import DisplayComics from './DisplayComics';
+import Comics from './Comics';
 
 class FetchComics extends Component {
   constructor(props) {
@@ -33,7 +33,7 @@ class FetchComics extends Component {
   render() {
     return (
       <div>
-        {this.state.comics && <DisplayComics comics = {this.state.comics} />}
+        {this.state.comics && <Comics comics = {this.state.comics} />}
       </div>
     );
   }
