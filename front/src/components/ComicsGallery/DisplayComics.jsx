@@ -8,7 +8,7 @@ const DisplayComics = ({comics}) => {
       <div className="comics-gallery-container">
         {comics.map(comic => 
         <div className="comic-container">
-          <img className="comic-cover" src={comic.cover_image} />
+          <img className="comic-cover" src={comic.cover_image}  alt={comic.title}/>
         </div>
           )}
       </div>
