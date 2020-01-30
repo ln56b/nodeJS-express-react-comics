@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.one-comic-container {
+  align-items: center;
+  border: 1px solid #ccc;
+  display: flex;
+  height: 60vh;
+  flex-direction: column;
+  margin: 1rem;
+  padding: 1rem;
+  position: absolute;
+  left: 45%;
+  top: 50%;
+  transform: translate(-50%, -50%);  
+  width: 80vw;
+}
+
+.comic-title {
+  padding: 2rem 1rem;
+}
+
+.comic-author {
+  padding: 2rem 1rem;
+}
+
+.comic-gender {
+  padding: 2rem 1rem;
+}

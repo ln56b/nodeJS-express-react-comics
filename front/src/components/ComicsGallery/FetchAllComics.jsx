@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import Comics from './Comics';
 
-class FetchComics extends Component {
+import axios from 'axios';
+import ComicsGallery from './ComicsGallery';
+
+class FetchAllComics extends Component {
   constructor(props) {
     super(props);
     this.state = { 
@@ -33,10 +34,10 @@ class FetchComics extends Component {
   render() {
     return (
       <div>
-        {this.state.comics && <Comics comics = {this.state.comics} />}
+        {this.state.comics && <ComicsGallery comics = {this.state.comics} />}
       </div>
     );
   }
 }
 
-export default FetchComics;
+export default FetchAllComics;

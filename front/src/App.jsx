@@ -1,13 +1,13 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import FetchComics from './components/ComicsGallery/FetchComics';
-import FetchComic from './components/ComicsContent/FetchComic';
+import { Route, Switch } from 'react-router-dom';
+import FetchAllComics from './components/ComicsGallery/FetchAllComics';
+import FetchComic from './components/ComicContent/FetchComic';
 
 function App() {
   return (
     <Switch>
-      <Route exact path="/" component={FetchComics} />
-      <Route path="/comics/:comicId" component={FetchComic} />
+      <Route exact path="/" component={FetchAllComics} />
+      <Route path="/comics/:id" component={FetchComic} />
     </Switch>
   );
 }

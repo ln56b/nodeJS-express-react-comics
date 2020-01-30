@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
+import React, {  Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import './Comics.css'
+import './ComicsGallery.css'
 
-const Comics = ({comics}) => {
+const Comics = ({ comics }) => {
   return (
     <Fragment>
       <h2 className="generic-h2-title">BD du moment</h2>
