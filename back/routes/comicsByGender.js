@@ -12,22 +12,6 @@ router.use(
   })
 );
 
-// Post a comic
-router.post('/', (req, res) => {
-  const formData = {
-    gender_id: req.params.genderId,
-    ...req.body
-  };
-  connection.query('INSERT INTO comic SET ?', formData, (err, results) => {
-    if (err) {
-      console.log(err);
-      res.status(500).send("Error saving a comic");
-    } else {
-      res.sendStatus(200);
-    }    
-  })
-});
-
 // Get all comics depending on their genre
 router.get('/', (req, res) => {
   const showAll= req.params.genderId;

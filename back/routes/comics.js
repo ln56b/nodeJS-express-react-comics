@@ -12,6 +12,18 @@ router.use(
   })
 );
 
+// Post a comic
+router.post('/', (req, res) => {
+  const formData = req.body;
+  connection.query('INSERT INTO comic SET ?', formData, (err, results) => {
+    if (err) {
+      res.status(500).send('Error when posting a comic');
+    } else {
+      res.sendStatus(200);
+    }    
+  })
+});
+
 // Get all comics 
 router.get('/', (req, res) => {
   let sql = 'SELECT * FROM comic';
