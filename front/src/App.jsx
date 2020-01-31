@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import FetchAllComics from './components/ComicsGallery/FetchAllComics';
 import FetchComic from './components/ComicContent/FetchComic';
-import VoteCounter from './components/VoteCounter';
 
 function App() {
   return (
-    <Switch>
-      <Route exact path="/" component={FetchAllComics} />
-      <Route path="/comics/:id" component={FetchComic} />
-      <Route path="/votes" component={VoteCounter} />
-    </Switch>
+    <Fragment>
+      <h2 className="generic-h2-title">Uber BD</h2>
+      <h4>L'appli de partage BD</h4>
+
+      <Switch>
+        <Route exact path="/" component={FetchAllComics} />
+        <Route path="/comics/:id" component={FetchComic} />
+      </Switch>
+    </Fragment>
   );
 }
 

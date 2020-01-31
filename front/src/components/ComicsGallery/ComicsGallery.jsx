@@ -16,7 +16,7 @@ const Comics = ({ comics }) => {
               <img className="comic-cover" src={comic.cover_image}  alt={comic.title}/>
             </div>
           </Link>
-          <VoteCounter comicId={comic.id} />
+          <VoteCounter comicId={comic.id} comicVotes={comic.user_votes} />
         </div> 
           )}
       </div>

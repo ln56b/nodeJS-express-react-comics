@@ -1,6 +1,11 @@
 * {
   margin: 0;
   padding: 0;
+  text-align: center;
+}
+
+h4 {
+  padding: 2rem;
 }
 
 .generic-h2-title {
@@ -19,7 +24,6 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  text-align: center;
 }
 
 .comic-container {

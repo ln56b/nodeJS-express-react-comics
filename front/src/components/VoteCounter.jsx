@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 class Counter extends Component {
-
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      count: 0,
+      count: this.props.comicVotes
     };
+    this.handleCounter = this.handleCounter.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleCounter = (value) => {
