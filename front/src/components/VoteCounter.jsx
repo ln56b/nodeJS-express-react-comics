@@ -27,7 +27,7 @@ class Counter extends Component {
     return (
       <div>
         <p>Votes: {this.state.user_votes}</p>
-        <button onClick={() => { this.handleCounter(this.state.user_votes + 1); this.handleSubmit() }}>
+        <button onClick={() => { this.handleCounter(Number(this.state.user_votes) + 1); this.handleSubmit() }}>
           +1
         </button>
       </div>
