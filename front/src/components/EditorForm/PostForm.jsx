@@ -27,6 +27,11 @@ class PostForm extends Component {
     alert('Merci pour votre partage')
     axios.post('/api/comics', this.state )
     .then(res => console.log(res.data))
+    this.setState({
+      title: '',
+      author: '',
+      cover_image:''
+    })
   };
 
   render() {
