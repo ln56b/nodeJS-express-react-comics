@@ -5,7 +5,7 @@
 
 .one-comic-container {
   align-items: center;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   display: flex;
   height: 60vh;
   flex-direction: column;
@@ -18,8 +18,14 @@
   width: 80vw;
 }
 
+.comic-background-image {
+  opacity: 0.2;
+}
+
 .comic-title {
+  margin-top: -20rem;
   padding: 2rem 1rem;
+  z-index: 1;
 }
 
 .comic-author {
@@ -28,4 +34,8 @@
 
 .comic-gender {
   padding: 2rem 1rem;
+}
+
+.comic-span {
+  font-style: bold;
 }
