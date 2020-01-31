@@ -10,14 +10,14 @@ const Comics = ({ comics }) => {
       <h2 className="generic-h2-title">Les dernières BD partagées</h2>
       <div className="comics-gallery-container">
         {comics.map(comic =>
-        <Fragment>
+        <div className="comics-gallery-and-vote">
           <Link to={`/comics/${comic.id}`}>
             <div className="comic-container">
               <img className="comic-cover" src={comic.cover_image}  alt={comic.title}/>
             </div>
           </Link>
           <VoteCounter comicId={comic.id} />
-        </Fragment> 
+        </div> 
           )}
       </div>
       <h2 className="generic-h2-title">Partagez vos BD préférées</h2>

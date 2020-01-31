@@ -24,9 +24,9 @@ class Counter extends Component {
 
   render() {
     return (
-      <div onSubmit={this.handleSubmit}>
+      <div>
         <p>Votes: {this.state.count}</p>
-        <button type="submit" onClick={() =>  this.handleCounter(this.state.count + 1)}>
+        <button onClick={() => { this.handleCounter(this.state.count + 1); this.handleSubmit() }}>
           +1
         </button>
       </div>
