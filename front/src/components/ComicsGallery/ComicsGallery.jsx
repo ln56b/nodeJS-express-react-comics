@@ -6,7 +6,9 @@ import VoteCounter from '../../components/VoteCounter';
 
 const Comics = ({ comics }) => {
   return (
-    <Fragment>
+    <Fragment>      
+      <h2 className="generic-h2-title">Uber BD</h2>
+      <h4>L'appli de partage BD</h4>
       <h2 className="generic-h2-title">Les dernières BD partagées</h2>
       <div className="comics-gallery-container">
         {comics.map(comic =>
