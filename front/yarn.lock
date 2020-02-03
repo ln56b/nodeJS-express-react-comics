@@ -9233,6 +9233,7 @@ serialize-javascript@^2.1.0:
   resolved "https://registry.yarnpkg.com/serialize-javascript/-/serialize-javascript-2.1.2.tgz#ecec53b0e0317bdc95ef76ab7074b7384785fa61"
   integrity sha512-rs9OggEUF0V4jUSecXazOYsLfu7OGK2qIn3c7IPBiffz32XniEp/TX9Xmc9LQfK2nQ2QKHvZ2oygKUGU0lG4jQ==
 
+
 serve-index@^1.9.1:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/serve-index/-/serve-index-1.9.1.tgz#d3768d69b1e7d82e5ce050fff5b453bea12a9239"
@@ -9881,7 +9882,7 @@ terser-webpack-plugin@2.2.1:
     find-cache-dir "^3.0.0"
     jest-worker "^24.9.0"
     schema-utils "^2.5.0"
-    serialize-javascript "^2.1.0"
+    serialize-javascript "^2.1.2"
     source-map "^0.6.1"
     terser "^4.3.9"
     webpack-sources "^1.4.3"
@@ -9895,7 +9896,7 @@ terser-webpack-plugin@^1.4.1:
     find-cache-dir "^2.1.0"
     is-wsl "^1.1.0"
     schema-utils "^1.0.0"
-    serialize-javascript "^2.1.0"
+    serialize-javascript "^2.1.2"
     source-map "^0.6.1"
     terser "^4.1.2"
     webpack-sources "^1.4.0"
