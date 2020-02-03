@@ -25,7 +25,6 @@
 .comic-title {
   margin-top: -20rem;
   padding: 2rem 1rem;
-  z-index: 1;
 }
 
 .comic-author {
@@ -38,4 +37,10 @@
 
 .comic-span {
   font-style: bold;
+}
+
+@media screen and (min-width: 768px) {
+  .comic-title{
+    max-width: 20vw;    
+  }
 }
